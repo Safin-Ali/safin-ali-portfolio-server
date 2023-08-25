@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "target": "ES5",
+        "esModuleInterop": true,
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "@controllers/*":["src/controllers/*.ts"],
+            "@config/*":["src/config/*.ts"],
+            "@model/*":["src/model/*.ts"],
+            "@middleware":["src/middleware/middleware.ts"],
+            "@routes/*":["src/routes/*.ts"],
+            "@services/*":["src/services/*.ts"],
+            "@custom-types/*":["src/types/*.ts"],
+            "@utilities/*":["src/types/*.ts"],
+            "@database/*":["src/database/*.ts"],
+            "@app":["src/app.ts"],
+        },
+        "typeRoots": ["node_modules/@types", "src/types"],
+    },
+    "include": ["./src/**/*"],
+    "exclude": ["node_modules"]
+}
