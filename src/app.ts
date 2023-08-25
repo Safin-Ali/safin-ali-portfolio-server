@@ -1,4 +1,5 @@
 import { port } from '@config/env-var';
+import initDB from '@database/db';
 import initMiddleware from '@middleware';
 import Routes from '@routes/routes';
 
@@ -14,6 +15,7 @@ class App {
 		this.expressApp = this.express();
 		this.routes = new Routes(this.expressApp);
 		initMiddleware(this.expressApp);
+		initDB();
 	}
 
 	server(){
