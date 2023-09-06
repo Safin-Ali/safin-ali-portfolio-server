@@ -13,8 +13,8 @@ class App {
 
 	constructor() {
 		this.expressApp = this.express();
-		this.routes = new Routes(this.expressApp);
 		initMiddleware(this.expressApp);
+		this.routes = new Routes(this.expressApp);
 		initDB();
 	}
 
