@@ -1,4 +1,5 @@
 import { mongodb_URI } from '@config/env-var';
+import { ConnectionOptions } from '@custom-types/mongoose.d';
 import mongoose from 'mongoose';
 import inDevMode from 'src/utilities/developmet-mode';
 
@@ -8,8 +9,14 @@ import inDevMode from 'src/utilities/developmet-mode';
  */
 
 async function main() {
-	try{
-		await mongoose.connect(mongodb_URI!);
+
+	const options: ConnectionOptions = {
+		useNewUrlParser: true,
+		useUnifiedTopology:true
+	};
+
+	try {
+		await mongoose.connect(mongodb_URI!, options);
 		inDevMode(() => console.log(`database connection successfull`));
 	}
 	catch {
