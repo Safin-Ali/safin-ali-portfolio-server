@@ -1,15 +1,15 @@
 {
-	"name": "portfolio-backend",
+	"name": "express-typescript-basic-boilerplate",
 	"version": "1.0.0",
-	"description": "safin ali portfolio v1 server-side codes",
-	"main": "index.js",
+	"description": "basic express app boilerplate",
+	"main": "src/index.ts",
 	"scripts": {
-		"build": "clear && webpack",
-		"dev": "clear && ts-node-dev --respawn -r tsconfig-paths/register src/index.ts"
+		"build": "webpack",
+		"dev": "ts-node-dev --respawn -r tsconfig-paths/register src/index.ts"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Safin-Ali/safin-ali-portfolio-server.git"
+		"url": "git+https://github.com/Safin-Ali/express-typescript-basic-boilerplate"
 	},
 	"keywords": [
 		"back-end",
@@ -24,9 +24,9 @@
 	"author": "Safin Ali",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/Safin-Ali/safin-ali-portfolio-server/issues"
+		"url": "https://github.com/Safin-Ali/express-typescript-basic-boilerplate"
 	},
-	"homepage": "https://github.com/Safin-Ali/safin-ali-portfolio-server#readme",
+	"homepage": "https://github.com/Safin-Ali/express-typescript-basic-boilerplate#readme",
 	"dependencies": {
 		"body-parser": "^1.20.2",
 		"core-js": "^3.32.1",
@@ -34,7 +34,7 @@
 		"dotenv": "^16.3.1",
 		"express": "^4.18.2",
 		"module-alias": "^2.2.3",
-		"mongoose": "^7.5.0"
+		"mongoose": "^7.4.1"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.22.9",
@@ -47,10 +47,9 @@
 		"@typescript-eslint/eslint-plugin": "^6.2.1",
 		"@typescript-eslint/parser": "^6.2.1",
 		"babel-loader": "^9.1.3",
-		"eslint": "^8.46.0",
 		"ts-node-dev": "^2.0.0",
 		"tsconfig-paths-webpack-plugin": "^4.1.0",
-		"web-pack": "^1.0.0",
+		"webpack": "^5.88.2",
 		"webpack-cli": "^5.1.4"
 	}
 }

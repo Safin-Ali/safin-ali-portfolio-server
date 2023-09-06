@@ -10,4 +10,8 @@
 
 5. Best ESLint Config For Developer Best Code Experience.
 
-6. OOP Approch Used.
+6. Programmer Meaningfull logger (conso.log()).
+
+7. Good Algorithm Or Meaningfull JSDocs Comments.
+
+8. OOP Approch Used.

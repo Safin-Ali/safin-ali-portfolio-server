@@ -4,10 +4,8 @@
         "moduleResolution": "Node",
         "target": "ES2015",
         "esModuleInterop": true,
-		"noImplicitAny": true,
         "strict": true,
         "baseUrl": ".",
-		"allowJs": true,
         "paths": {
             "@controllers/*":["src/controllers/*.ts"],
             "@config/*":["src/config/*.ts"],
