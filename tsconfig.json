@@ -2,7 +2,7 @@
     "compilerOptions": {
         "module": "CommonJS",
         "moduleResolution": "Node",
-        "target": "ES5",
+        "target": "ES2015",
         "esModuleInterop": true,
         "strict": true,
         "baseUrl": ".",
@@ -14,7 +14,7 @@
             "@routes/*":["src/routes/*.ts"],
             "@services/*":["src/services/*.ts"],
             "@custom-types/*":["src/types/*.ts"],
-            "@utilities/*":["src/types/*.ts"],
+            "@utilities/*":["src/utilities/*.ts"],
             "@database/*":["src/database/*.ts"],
             "@app":["src/app.ts"],
         },

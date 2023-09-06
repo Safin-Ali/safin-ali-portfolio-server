@@ -1,57 +1,55 @@
 {
-  "name": "portfolio-backend",
-  "version": "1.0.0",
-  "description": "safin ali portfolio v1 server-side codes",
-  "main": "index.js",
-  "_moduleAliases": {
-    "@": "dist"
-  },
-  "scripts": {
-    "build": "webpack src/index.ts",
-    "dev": "clear && ts-node-dev --respawn -r tsconfig-paths/register src/index.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Safin-Ali/safin-ali-portfolio-server.git"
-  },
-  "keywords": [
-    "back-end",
-    "nodejs",
-    "server-code",
-    "expressjs",
-    "mongoose",
-    "mongodb",
-    "dot-env",
-    "jwt"
-  ],
-  "author": "Safin Ali",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Safin-Ali/safin-ali-portfolio-server/issues"
-  },
-  "homepage": "https://github.com/Safin-Ali/safin-ali-portfolio-server#readme",
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "module-alias": "^2.2.3",
-    "mongoose": "^7.4.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.22.9",
-    "@babel/core": "^7.22.9",
-    "@babel/preset-env": "^7.22.9",
-    "@babel/preset-typescript": "^7.22.5",
-    "@types/body-parser": "^1.19.2",
-    "@types/cors": "^2.8.13",
-    "@types/express": "github:types/express",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
-    "babel-loader": "^9.1.3",
-    "eslint": "^8.46.0",
-    "ts-node-dev": "^2.0.0",
-    "tsconfig-paths": "^4.2.0",
-    "web-pack": "^1.0.0"
-  }
+	"name": "express-typescript-basic-boilerplate",
+	"version": "1.0.0",
+	"description": "basic express app boilerplate",
+	"main": "src/index.ts",
+	"scripts": {
+		"build": "webpack",
+		"dev": "ts-node-dev --respawn -r tsconfig-paths/register src/index.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Safin-Ali/express-typescript-basic-boilerplate"
+	},
+	"keywords": [
+		"back-end",
+		"nodejs",
+		"server-code",
+		"expressjs",
+		"mongoose",
+		"mongodb",
+		"dot-env",
+		"jwt"
+	],
+	"author": "Safin Ali",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Safin-Ali/express-typescript-basic-boilerplate"
+	},
+	"homepage": "https://github.com/Safin-Ali/express-typescript-basic-boilerplate#readme",
+	"dependencies": {
+		"body-parser": "^1.20.2",
+		"core-js": "^3.32.1",
+		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2",
+		"module-alias": "^2.2.3",
+		"mongoose": "^7.4.1"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.22.9",
+		"@babel/core": "^7.22.9",
+		"@babel/preset-env": "^7.22.9",
+		"@babel/preset-typescript": "^7.22.5",
+		"@types/body-parser": "^1.19.2",
+		"@types/cors": "^2.8.13",
+		"@types/express": "github:types/express",
+		"@typescript-eslint/eslint-plugin": "^6.2.1",
+		"@typescript-eslint/parser": "^6.2.1",
+		"babel-loader": "^9.1.3",
+		"ts-node-dev": "^2.0.0",
+		"tsconfig-paths-webpack-plugin": "^4.1.0",
+		"webpack": "^5.88.2",
+		"webpack-cli": "^5.1.4"
+	}
 }
