@@ -1,6 +1,7 @@
 import { Application } from 'express';
 import { CustomRouter } from '@custom-types/routes.d';
 import common_router from './common-router';
+import projectsRouter from './projects-router';
 
 /**
  * Represents a class for managing and registering routes in an Express application.
@@ -16,7 +17,7 @@ class Routes {
 	 * You should populate this array with your exported routers.
 	 */
 	public routesPath: CustomRouter[] = [
-		// Put here your all route exported routers
+		projectsRouter
 	];
 
 	/**
