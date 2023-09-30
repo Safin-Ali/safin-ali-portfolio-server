@@ -1,6 +1,6 @@
 import { addProjects, getProjects } from '@controllers/projetcs-controller';
+import configRouter from '@utilities/config-router';
 import {Router} from 'express';
-import configRouter from 'src/utilities/config-router';
 
 export const router = Router();
 
