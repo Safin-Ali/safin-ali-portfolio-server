@@ -1,16 +1,22 @@
 {
-    "presets": [
-        [
-            "@babel/preset-env",
-            {
-                "targets":{
-                    "node":true
-                },
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"targets": {
+					"node": "current"
+				},
 				"useBuiltIns": "usage",
 				"corejs": 3
-            }
-        ],
-        "@babel/preset-typescript"
-    ]
-
+			}
+		],
+		[
+			"@babel/preset-typescript",{
+				"rewriteImportExtensions":true
+			}
+		]
+	],
+	"plugins": [
+		"tsconfig-alias-to-relative"
+	]
 }
