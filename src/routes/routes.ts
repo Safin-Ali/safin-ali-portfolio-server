@@ -3,6 +3,7 @@ import { CustomRouter } from '@custom-types/routes.d';
 import common_router from './common-router';
 import projectsRouter from './projects-router';
 import skillsRouter from './skills-router';
+import servicesRouter from './services-router';
 
 /**
  * Represents a class for managing and registering routes in an Express application.
@@ -19,7 +20,8 @@ class Routes {
 	 */
 	public routesPath: CustomRouter[] = [
 		projectsRouter,
-		skillsRouter
+		skillsRouter,
+		servicesRouter
 	];
 
 	/**
