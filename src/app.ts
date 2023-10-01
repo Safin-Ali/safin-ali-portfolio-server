@@ -7,7 +7,7 @@ import initMiddleware from '@middleware';
 import Routes from '@routes/routes';
 import initDB from '@database/db';
 
-import express, { Application, Express } from 'express';
+import express, { Application } from 'express';
 import logger from '@utilities/color-logger';
 
 /**
@@ -20,7 +20,7 @@ class App {
 	 * @private
 	 * @type {Express}
 	 */
-	private express: Express = express;
+	private express: typeof express = express;
 
 	/**
 	 * The Express.js application instance.
