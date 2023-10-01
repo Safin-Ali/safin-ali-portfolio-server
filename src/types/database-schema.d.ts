@@ -13,3 +13,9 @@ export type ProjectSchemaType = {
     projectTech: string[];
     shortText: string;
 };
+
+export interface SkillSchemaType {
+    icon:string,
+    name: string,
+    level: 'Intermediate' | 'Familiar' | 'Expert' | 'Master' | 'Future',
+}
