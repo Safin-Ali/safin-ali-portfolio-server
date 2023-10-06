@@ -1,16 +1,9 @@
-import { Response } from 'express';
-import { Custom_Requst, EmailType } from '@custom-types/routes.d';
+import { CustomRequestBodyType, EmailType } from '@custom-types/routes.d';
 import inDevMode from '@utilities/developmet-mode';
 import logger from '@utilities/color-logger';
-import { transport } from '@utilities/common-utilities';
+import { routeHandler, transport } from '@utilities/common-utilities';
 
-/**
- *
- * @param req - The Express.js request object with custom body object.
- * @param res - The Express.js response object.
- */
-
-export async function sendEmail(req: Custom_Requst<EmailType>, res: Response) {
+export const sendEmail = routeHandler<Promise<void>,CustomRequestBodyType<EmailType>>(async (req, res) => {
 
 	const {emailDesc,emailSub,senderEmail,senderName} = req.body;
 
@@ -26,4 +19,4 @@ export async function sendEmail(req: Custom_Requst<EmailType>, res: Response) {
 		inDevMode(() => logger.error(e.message));
 		res.status(500).json('error');
 	}
-}
+});

@@ -1,24 +1,32 @@
 import { ProjectsModel } from '@model/projects-schema';
-import { Response, Request } from 'express';
+import { routeHandler } from '@utilities/common-utilities';
 
-export async function getProjects(_:unknown, res: Response) {
+/**
+ * Get list of all projects as `array`.
+ * @returns {Promise<void>}
+ */
+export const getProjects = routeHandler( async (_,res) => {
 	try{
 		const result = await ProjectsModel.find();
-		return res.send(result);
+		res.send(result);
 	} catch {
-		return res.status(500).send('Internal Server Error');
+		res.status(500).send('Internal Server Error');
 	}
-}
+});
 
-export async function getNProjects(req: Request, res: Response) {
+/**
+ * Get list of projects by used technology as `array`.
+ * @returns {Promise<void>}
+ */
+export const getNProjects = routeHandler(async (req,res) => {
 	try{
 		const result = await ProjectsModel.find({
 			projectTech: {
 				$in: [req.query.category]
 			}
 		});
-		return res.send(result);
+		res.send(result);
 	} catch {
-		return res.status(500).send('Internal Server Error');
+		res.status(500).send('Internal Server Error');
 	}
-}
+});

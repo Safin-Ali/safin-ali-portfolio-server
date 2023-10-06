@@ -1,7 +1,11 @@
 import { SkillsModel } from '@model/skills-schema';
-import { Response} from 'express';
+import { routeHandler } from '@utilities/common-utilities';
 
-export async function getSkills(_:unknown, res: Response) {
+/**
+ * Get skills data as `array`.
+ * @returns {Promise<void>}
+ */
+export const getSkills = routeHandler(async (_, res) => {
 	const result = await SkillsModel.find();
-	return res.send(result);
-}
+	res.send(result);
+});
