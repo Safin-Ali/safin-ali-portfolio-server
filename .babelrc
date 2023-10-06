@@ -18,5 +18,6 @@
 	],
 	"plugins": [
 		"tsconfig-alias-to-relative"
-	]
+	],
+	"comments": false
 }
