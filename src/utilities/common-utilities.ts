@@ -48,18 +48,18 @@ export function readFileAsync(path: PathOrFileDescriptor, reject: ((e: string) =
 	});
 }
 
-/**
- * Defines a type for route handler functions.
- * @template ReturnType - The expected return type of the handler.
- * @param {Request} req - The HTTP request object.
- * @param {Response} res - The HTTP response object.
- * @returns {void | ReturnType} - The return type can be void or the specified ReturnType.
- */
+
 /**
  * Creates a route handler function.
  * @param {RouteHandlerType} callback - The callback function that handles the route.
  *
- * Note: `callback` function accept two `Arguments`. first will be `Request` Object and second is `Response` object
+ * @description
+ * `Note 1:` This define default return and req type is `void` and `Request` ⇦⇦ express.
+ *
+ * `Note 2`: `callback` function accept two `Arguments`. first will be `Request` Object and second is `Response` object.
+ *
+ * `Note 3`: If you want to use `custom type` then use `generic` type with first `Argument` is `return` type of callback and second will be `request` type.
+ *
  * @returns {RouteHandlerType} - The route handler function.
  * @example
  * // Define a handler function
@@ -68,12 +68,31 @@ export function readFileAsync(path: PathOrFileDescriptor, reject: ((e: string) =
  *		res.send('Hello, World!',queryVal);
  * };
  *
+ * // creating custom types alias
+ *
+ * type CustomReturnType = Promised<void>
+ *
+ * //for CustomReqType you need to import Request type from express.
+ *
+ * type CustomReqType = Request & {
+ * body: {name:string ...etc},
+ * query: {search:string ...etc},
+ * }
+ *
+ * // Define a handler function with custom type
+ *
+ * const myHandler = <Promise<void>,CustomReqType> (req, res) => {
+	const queryVal = req.params;
+	res.send('Hello, World!', queryVal);
+	}
+ *
  * // Create a route handler using routeHandler
  * const routeHandlerFunction = routeHandler(myHandler);
  *
  * // Use routeHandlerFunction as an Express route handler
  * app.get('/my-route', routeHandlerFunction);
  */
-export const routeHandler = (callback: RouteHandlerType): RouteHandlerType => {
+
+export const routeHandler = <Return = void, Req = undefined>(callback: RouteHandlerType<Return, Req>): RouteHandlerType<Return, Req> => {
 	return callback;
 };
