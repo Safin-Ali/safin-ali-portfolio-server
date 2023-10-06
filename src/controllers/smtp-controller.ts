@@ -21,9 +21,9 @@ export async function sendEmail(req: Custom_Requst<EmailType>, res: Response) {
 			subject:emailSub,
 			text: emailDesc,
 		});
-		res.status(200).send('success');
+		res.status(200).json('success');
 	} catch (e: any) {
 		inDevMode(() => logger.error(e.message));
-		res.status(500).send('error');
+		res.status(500).json('error');
 	}
 }
