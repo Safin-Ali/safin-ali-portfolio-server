@@ -1,11 +1,11 @@
 import { Application, } from 'express';
-import bodyPharser from './body-pharser';
 import CORS from './CORS';
+import {json} from 'express';
 
 const initMiddleware = (app:Application) => {
 
 	// for JSON pharser
-	app.use(bodyPharser());
+	app.use(json());
 
 	// for CORS
 	app.use(CORS());
