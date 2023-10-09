@@ -6,6 +6,7 @@ export interface CustomRequestBodyType <T> extends Request {
 }
 
 export interface EmailType {
+	senderLocation:string
 	emailSub:string
 	senderName:string,
 	senderEmail:string,

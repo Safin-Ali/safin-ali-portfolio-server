@@ -12,9 +12,9 @@ export const sendEmail = routeHandler<Promise<void>, CustomRequestBodyType<Email
 
 	const dateObj = new Date();
 
-	const { emailDesc, emailSub, senderEmail, senderName } = req.body;
+	const { emailDesc, emailSub, senderEmail, senderLocation, senderName } = req.body;
 
-	const ISODate = `${monthsShort[dateObj.getMonth() + 1]} ${dateObj.getMonth()} ${dateObj.getFullYear()}`;
+	const ISODate = `${monthsShort[dateObj.getMonth()]} ${dateObj.getMonth()} ${dateObj.getFullYear()}`;
 
 	try {
 		const emailHtml = readFileSync(resolve(__dirname,'..','template', 'email-template.ejs'),'utf-8');
@@ -27,7 +27,8 @@ export const sendEmail = routeHandler<Promise<void>, CustomRequestBodyType<Email
 				senderEmail,
 				emailDesc,
 				emailSub,
-				senderName
+				senderName,
+				senderLocation
 			})
 		});
 		res.status(200).json('success');
