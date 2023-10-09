@@ -1,5 +1,4 @@
-import logger from '@utilities/color-logger';
-import { readFileAsync, resolveWithRoot, routeHandler } from '@utilities/common-utilities';
+import { routeHandler } from '@utilities/common-utilities';
 /**
  * Handles requests to the root route ("/") and sends an HTML response.
  *
@@ -8,10 +7,5 @@ import { readFileAsync, resolveWithRoot, routeHandler } from '@utilities/common-
  */
 
 export const rootRouteHandler = routeHandler((_,res)=>{
-	readFileAsync(resolveWithRoot('template','about.html'),(e)=>{
-		logger.error(e);
-		res.status(500).send(`Server Side Error`);
-	},(d)=>{
-		res.status(200).end(d);
-	});
+	res.render('root-page');
 });
