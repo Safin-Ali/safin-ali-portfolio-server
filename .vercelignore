@@ -1,2 +1,3 @@
 *.ts
-src
+.eslintrc.js
+tsconfig.json
