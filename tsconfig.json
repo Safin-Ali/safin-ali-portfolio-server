@@ -6,7 +6,6 @@
         "esModuleInterop": true,
         "strict": true,
         "baseUrl": "./src",
-		"outDir": "./tsc_compile",
         "paths": {
             "@controllers/*":["controllers/*.ts"],
             "@config/*":["config/*.ts"],

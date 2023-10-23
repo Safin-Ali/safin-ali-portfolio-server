@@ -1,6 +1,6 @@
-import { getProjects } from '@controllers/projetcs-controller';
+import { getNProjects, getProjects } from '@controllers/projetcs-controller';
 import configRouter from '@utilities/config-router';
-import {Router} from 'express';
+import { Router } from 'express';
 
 export const router = Router();
 
@@ -10,4 +10,9 @@ export const router = Router();
 router.route(`/`)
 	.get(getProjects);
 
-export default configRouter(['/api/projects',router]);
+/**
+ * handle to get projects data by project technology bases
+ */
+router.get(`/categ`,getNProjects);
+
+export default configRouter(['/api/projects', router]);

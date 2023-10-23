@@ -61,7 +61,7 @@ class App {
  * The main application instance.
  * @type {App}
  */
-const app = new App();
+const app:App = new App();
 
 /**
  * Starts the server using the main application instance.

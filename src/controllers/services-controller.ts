@@ -1,7 +1,11 @@
 import { ServicesModel } from '@model/services-schema';
-import { Response} from 'express';
+import { routeHandler } from '@utilities/common-utilities';
 
-export async function getServices(_:unknown, res: Response) {
+/**
+ * Get a services data as `array`.
+ * @returns {Promise<void>}
+ */
+export const getServices = routeHandler( async(_, res) => {
 	const result = await ServicesModel.find();
-	return res.send(result);
-}
+	res.send(result);
+});

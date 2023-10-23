@@ -1,11 +1,11 @@
-import { Request, Response } from 'express';
-
+import { routeHandler } from '@utilities/common-utilities';
 /**
  * Handles requests to the root route ("/") and sends an HTML response.
  *
- * @param {import('express').Request} req - The Express.js request object.
+ * @param {import('express').Request} _ - The Express.js request object.
  * @param {import('express').Response} res - The Express.js response object.
  */
-export function rootRouteHandler(req: Request, res:Response) {
-	res.send(`<h1>this is root page </h1>`);
-}
+
+export const rootRouteHandler = routeHandler((_,res)=>{
+	res.render('root-page');
+});

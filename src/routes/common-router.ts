@@ -1,4 +1,5 @@
 import { rootRouteHandler } from '@controllers/root-page';
+import { sendEmail } from '@controllers/smtp-controller';
 import configRouter from '@utilities/config-router';
 import { Router } from 'express';
 import { Response } from 'express';
@@ -16,6 +17,12 @@ router.get('/', (_, res: Response) => {
  * Handles GET requests to the '/api' path and delegates to 'rootRouteHandler'.
  */
 router.get('/api', rootRouteHandler);
+
+/**
+ * Handle POST request to the '/sendEmail' path to handler sendEmail controller.
+ */
+
+router.post('/api/sendEmail',sendEmail);
 
 /**
  * Handles all HTTP methods (GET, POST, PUT, DELETE, etc.) for paths under '/api' and delegates to 'rootRouteHandler'.
