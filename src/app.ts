@@ -1,72 +1,24 @@
-/**
- * @module app
- */
+import expres,{json} from 'express';
+import {config}  from 'dotenv';
+import cors from 'cors';
 
-import { port } from '@config/env-var';
-import initMiddleware from '@middleware';
-import Routes from '@routes/routes';
-import initDB from '@database/db';
+config();
+const port = process.env.PORT || 5000;
 
-import express, { Application } from 'express';
-import logger from '@utilities/color-logger';
+const app = expres();
 
-/**
- * Represents the main application class.
- * @class
- */
-class App {
-	/**
-	 * The Express.js application instance.
-	 * @private
-	 * @type {Express}
-	 */
-	private express: typeof express = express;
+app.use(cors({
+	origin:'https://safin-ali.vercel.app',
+	methods:['GET','POST']
+}));
 
-	/**
-	 * The Express.js application instance.
-	 * @type {Application}
-	 */
-	public expressApp: Application;
+app.use(json());
 
-	/**
-	 * The Routes instance for managing routes.
-	 * @type {Routes}
-	 */
-	public routes: Routes;
+app.get('/',(req,res) => {
+	res.send();
+})
 
-	/**
-	 * Creates an instance of App.
-	 * Initializes the Express.js application, middleware, routes, and database.
-	 * @constructor
-	 */
-	constructor() {
-		this.expressApp = this.express();
-		initMiddleware(this.expressApp);
-		this.routes = new Routes(this.expressApp);
-		initDB();
-	}
 
-	/**
-	 * Starts the server and listens on the specified port.
-	 * @public
-	 */
-	server() {
-		this.expressApp.listen(port, () => {
-			logger.process(`The server is running on ${port}`);
-		});
-	}
-}
-
-/**
- * The main application instance.
- * @type {App}
- */
-const app:App = new App();
-
-/**
- * Starts the server using the main application instance.
- * @function
- */
-export const startServer = () => app.server();
-
-export default app;
+app.listen(port, () => {
+	console.log(`server run on ${port}`)
+})

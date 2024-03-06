@@ -4,6 +4,7 @@
         "moduleResolution": "Node",
         "target": "ES2015",
         "esModuleInterop": true,
+		"removeComments": true,
         "strict": true,
         "baseUrl": "./src",
         "paths": {
