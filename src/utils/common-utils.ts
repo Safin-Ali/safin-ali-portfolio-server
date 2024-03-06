@@ -1,4 +1,5 @@
 import { RouteHandlerArg } from '@custom-types/types.d';
+import { Response } from 'express';
 import { createTransport } from 'nodemailer';
 
 /**
@@ -13,6 +14,14 @@ import { createTransport } from 'nodemailer';
 export const routeHandler = <Req = undefined,Ret = void>(callback:RouteHandlerArg<Req,Ret>) => {
 	return callback;
 }
+
+/**
+ * Sends a 500 Internal Server Error response.
+ * @param res Express Response object.
+ * @returns void
+ */
+export const errRes = (res: Response) => res.status(500).send('Server Side Error');
+
 
 
 /**
