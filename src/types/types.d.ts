@@ -39,3 +39,14 @@ export type RouteHandlerArg<T, R> = (req: RouteHandlerRequestType<T>, res: Respo
  * @typeparam R The type of the result returned by the callback function.
  */
 export type DBOperationArg<R> = (database:Db) => Promise<R>;
+
+/**
+ * Represents the structure of an email object.
+ */
+export interface EmailType {
+	senderLocation:string
+	emailSub:string
+	senderName:string,
+	senderEmail:string,
+	emailDesc:string,
+}
