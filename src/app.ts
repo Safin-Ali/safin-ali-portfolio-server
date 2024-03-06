@@ -1,11 +1,11 @@
 import expres,{json} from 'express';
 import {config}  from 'dotenv';
+config();
 import cors from 'cors';
 import projects_router from '@routes/projects-router';
 import { rootRouteHandler } from '@controllers/root-controller';
 import {resolve} from 'path';
-
-config();
+import { sendEmail } from '@controllers/smtp-controller';
 const port = process.env.PORT || 5000;
 
 const app = expres();
@@ -26,6 +26,9 @@ app.use(json());
 app.use('/api/project',projects_router);
 
 app.get('/api',rootRouteHandler);
+
+// for send email
+app.post('/api/sendEmail',sendEmail);
 
 app.listen(port, () => {
 	console.log(`server run on ${port}`)

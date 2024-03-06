@@ -1,4 +1,5 @@
 import { RouteHandlerArg } from '@custom-types/types.d';
+import { createTransport } from 'nodemailer';
 
 /**
  * A utility function for handling route requests in an Express.js application.
@@ -12,3 +13,16 @@ import { RouteHandlerArg } from '@custom-types/types.d';
 export const routeHandler = <Req = undefined,Ret = void>(callback:RouteHandlerArg<Req,Ret>) => {
 	return callback;
 }
+
+
+/**
+ * create nodemailer transport
+ */
+
+export const transport = createTransport({
+	service: 'gmail',
+	auth: {
+		user:process.env.MY_EMAIL,
+		pass:process.env.MY_EMAIL_PASS
+	}
+});
