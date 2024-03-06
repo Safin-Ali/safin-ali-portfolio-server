@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import {Db} from 'mongodb';
 
 /**
  * Represents a request body with a specific type.
@@ -31,3 +32,10 @@ type RouteHandlerRequestType<T> = T extends undefined ? Request : CustomReqBody<
  * @typeparam R - The type of the return value.
  */
 export type RouteHandlerArg<T, R> = (req: RouteHandlerRequestType<T>, res: Response) => RouteHandlerReturnType<R>;
+
+
+/**
+ * Defines the type for the callback function used in database operations.
+ * @typeparam R The type of the result returned by the callback function.
+ */
+export type DBOperationArg<R> = (database:Db) => Promise<R>;
