@@ -1,6 +1,7 @@
 import expres,{json} from 'express';
 import {config}  from 'dotenv';
 import cors from 'cors';
+import projects_router from '@routes/projects-router';
 import { rootRouteHandler } from '@controllers/root-controller';
 import {resolve} from 'path';
 
@@ -21,6 +22,8 @@ app.use(cors({
 }));
 
 app.use(json());
+
+app.use('/api/project',projects_router);
 
 app.get('/api',rootRouteHandler);
 
