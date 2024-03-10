@@ -42,4 +42,4 @@ jobs:
           git reset "src/*.ts"
           git add -A
           git commit -m "Stable V${{ steps.get_version.outputs.VERSION }}"
-          git push origin release
+          git push origin release_2.0
