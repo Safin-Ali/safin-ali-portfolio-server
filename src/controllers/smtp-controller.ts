@@ -1,7 +1,7 @@
 import {render} from 'ejs';
 import {resolve} from 'path';
 import {readFileSync} from 'fs';
-import { routeHandler, transport } from 'utils/common-utils';
+import { routeHandler, transport } from '@utilities/common-utils';
 import { EmailType } from '@custom-types/types.d';
 
 export const sendEmail = routeHandler<EmailType>(async (req, res) => {
