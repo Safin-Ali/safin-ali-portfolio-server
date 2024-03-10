@@ -1,36 +1,27 @@
 name: Build TypeScript
-
-on:
+'on':
   push:
     branches:
-      - "2.0" # You can change this to your default branch name
-    workflow_dispatch:
-
-env:
-  GIT_CONFIG_EMAIL: safin.ali.7205@gmail.com
-  GIT_CONFIG_USERNAME: Safin-Ali
-
+      - '2.0'
+  workflow_dispatch: 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18' # You can specify any Node.js version you prefer
-
+          node-version: '18'
       - name: Install dependencies
         run: yarn install
-
       - name: Get version from package.json
         id: get_version
-        run: echo "::set-output name=VERSION::$(node -e "console.log(require('./package.json').version)")"
-
-      - name: Build, Commit and push changes
+        run: >
+          echo "::set-output name=VERSION::$(node -e
+          "console.log(require('./package.json').version)")"
+      - name: 'Build, Commit and push changes'
         run: |
           git config --local user.email "${{ secrets.GIT_CONFIG_EMAIL }}"
           git config --local user.name "${{ secrets.GIT_CONFIG_USERNAME }}"
