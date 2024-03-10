@@ -1424,10 +1424,10 @@ ts-node@^10.4.0:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
-tsconfig-paths-resolver@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/tsconfig-paths-resolver/-/tsconfig-paths-resolver-1.0.1.tgz#c1694df6a01adae14aa23827dbd84108028607d3"
-  integrity sha512-LdDo7wxfU7JjXNvTwcloLjPVnMxLPgxw2pQfN2QlraWHq7cqXMEFroeEBT/oVOWjsLJQP2yr59LxxKE3HyXvsw==
+tsconfig-paths-resolver@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths-resolver/-/tsconfig-paths-resolver-1.0.2.tgz#dd7477aad1b001dc25985bed8c80ad6c04238de7"
+  integrity sha512-oRRRilb9MIIuhyybmTFX2uoIXPk0aVFE4VDmzvLs4E4ExULL07quQPSF0IWlQRIXGGSPfTjzTk0k0eYK9LHMTA==
   dependencies:
     "@babel/generator" "^7.23.0"
     "@babel/parser" "^7.23.0"
