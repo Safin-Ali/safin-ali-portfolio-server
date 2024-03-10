@@ -3,7 +3,7 @@ name: Build TypeScript
   push:
     branches:
       - '2.0'
-  workflow_dispatch: 
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,6 +31,7 @@ jobs:
           git checkout release_2.0 -- ".gitignore"
           yarn build
           git reset "src/*.ts"
+          git rm -rf .github/workflows/compile-typescript.yaml
           git add -A
           git commit -m "Stable V${{ steps.get_version.outputs.VERSION }}"
           git push origin release_2.0
