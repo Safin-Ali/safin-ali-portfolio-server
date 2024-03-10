@@ -1,7 +1,7 @@
 import { ProjectModel } from '@custom-types/db-data-type.d';
-import { dbOperation } from 'db/db';
-import { ObjectId, WithId } from 'mongodb';
-import { errRes, routeHandler } from 'utils/common-utils';
+import { dbOperation } from '@database/db';
+import { errRes, routeHandler } from '@utilities/common-utils';
+import { ObjectId } from 'mongodb';
 
 /**
  * Retrieves all projects from the database and sends a response containing a modified subset of project data.

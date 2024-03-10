@@ -5,7 +5,7 @@
  * @param {import('express').Response} res - The Express.js response object.
  */
 
-import { routeHandler } from 'utils/common-utils';
+import { routeHandler } from '@utilities/common-utils';
 
 export const rootRouteHandler = routeHandler((_,res)=>{
 	res.render('root-page');
