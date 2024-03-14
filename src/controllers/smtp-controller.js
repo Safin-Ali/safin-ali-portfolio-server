@@ -42,7 +42,7 @@ exports.sendEmail = (0, common_utils_1.routeHandler)((req, res) => __awaiter(voi
     emailDesc,
     emailSub,
     senderEmail,
-    senderLocation,
+    senderLocation = 'Bangladesh',
     senderName
   } = req.body;
   const ISODate = `${monthsShort[dateObj.getMonth()]} ${dateObj.getDate()} ${dateObj.getFullYear()}`;
