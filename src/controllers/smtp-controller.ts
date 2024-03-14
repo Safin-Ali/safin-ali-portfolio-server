@@ -11,7 +11,7 @@ export const sendEmail = routeHandler<EmailType>(async (req, res) => {
 	const dateObj = new Date();
 
 
-	const { emailDesc, emailSub, senderEmail, senderLocation, senderName } = req.body;
+	const { emailDesc, emailSub, senderEmail, senderLocation = 'Bangladesh', senderName } = req.body;
 
 	const ISODate = `${monthsShort[dateObj.getMonth()]} ${dateObj.getDate()} ${dateObj.getFullYear()}`;
 
